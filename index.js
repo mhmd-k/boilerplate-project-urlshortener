@@ -52,7 +52,6 @@ app.post("/api/shorturl", async (req, res) => {
 
     if (doc) {
       return res.status(409).json({
-        message: "URL already exists",
         original_url: doc.originalUrl,
         short_url: doc.shortUrl,
       });
@@ -69,7 +68,6 @@ app.post("/api/shorturl", async (req, res) => {
 
     // Respond with the shortened URL
     res.status(200).json({
-      message: "URL shortened successfully",
       original_url: url,
       short_url: shortUrl,
     });
